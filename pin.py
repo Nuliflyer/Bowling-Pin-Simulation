@@ -12,4 +12,9 @@ class pin:
         self.a = angles[0]
         self.b = angles[1]
 
+    def collision(self, point):
+        if (((self.x - point[0])**2 + (self.y - point[1])**2 + (self.z - point[2])**2)**0.5 < self.h + self.r):
+            #Inside potential radius
+
 bowlingPin = pin([0,5,0], 5, 10, 1, [0, 0])
+bowlingPin.collision([0,5,0])
