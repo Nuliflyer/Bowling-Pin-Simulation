@@ -27,11 +27,21 @@ class ball:
     def setPosition(self, point):
         self.x, self.y, self.z = point
 
+    def setVelocity(self, velocity):
+        self.vx, self.vz = velocity
+
     def updatePositiion(self):
         x = self.x + self.vx
+        if x >= 20:
+            x = 20
+            setVelocity([0, self.vz])
+        elif x <= -20:
+            x = -20
+            setVelocity([0, self.vz])
+
         z = self.z + self.vz
         setPosition([x, self.y, z])
 
+
 bowlingBall = ball([0,0,0], 8, 7, 5, [0, 3])
-#bowlingBall.collision([0,5,0])
 bowlingBall.setPosition([0, 0, 0])
