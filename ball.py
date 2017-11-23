@@ -41,7 +41,3 @@ class ball:
 
         z = self.z + self.vz
         setPosition([x, self.y, z])
-
-
-bowlingBall = ball([0,0,0], 8, 7, 5, [0, 3])
-bowlingBall.setPosition([0, 0, 0])

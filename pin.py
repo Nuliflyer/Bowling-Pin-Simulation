@@ -6,6 +6,9 @@ class pin:
         self.x = point[0]
         self.y = point[1]
         self.z = point[2]
+        self.vx = velocity[0]
+        self.vy = velocity[1]
+        self.vz = velocity[2]
         self.m = mass
         self.h = height
         self.r = radius
@@ -42,6 +45,6 @@ class pin:
     #currently, this is a cylinder.
 
 
-bowlingPin = pin([0,5,0], 5, 10, 1, [0, 0])
-bowlingPin.collision([0,5,0])
-bowlingPin.setPosition([0, 10, 0])
+# bowlingPin = pin([0,5,0], 5, 10, 1, [0, 0])
+# bowlingPin.collision([0,5,0])
+# bowlingPin.setPosition([0, 10, 0])
