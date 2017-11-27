@@ -1,9 +1,8 @@
 class pin:
-    def __init__(self, position, velocity, mass, angles):
-        #x y z refer to the center of mass.
-        #According to bowling.com the pin is made of a solid material coated by
-        #another material, so we assume the mass is uniformly distributed
 
+    #Position is origin of pin, angles are xy and yz angles, definition is stretch factors on elipsoid. (a, b, c)
+    def __init__(self, position, velocity, mass, angles, definition):
+        self.definition = definition
         self.x = point[0]
         self.y = point[1]
         self.z = point[2]
@@ -12,8 +11,8 @@ class pin:
         self.b = angles[1]
         self.definition = myfunc
 
-    def insideObject(x, y, z):
-
+    def getDefinition(self):
+        return self.definition
 
     def getPosition(self):
         return [self.x, self.y, self.z]
@@ -39,6 +38,7 @@ class pin:
     def getDefinition(self):
         return self.definition
 
-bowlingPin = pin([0,5,0], 5, 10, 1, [0, 0])
+
+bowlingPin = pin([0,5,0], 5, 10, 1, [0, 0], [1, 1, 1])
 bowlingPin.collision([0,5,0])
 bowlingPin.setPosition([0, 10, 0])
