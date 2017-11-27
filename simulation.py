@@ -3,7 +3,7 @@ pinImage = "pin.png"
 
 from ball import *
 from pin import *
-from collision import *
+from collision import*
 
 import pygame
 import sys
