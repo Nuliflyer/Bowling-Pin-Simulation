@@ -22,17 +22,16 @@ screen = pygame.display.set_mode((windowWidth, windowHeight))
 pygame.display.set_caption('Bowling Pin Simulation')
 
 ballHeight = 8
-pinHeight = 10
-bowlingBall = ball([0,ballHeight/2,0], 10, ballHeight, 5, [0,5])
-bowlingPin = pin([0,pinHeight/2,100], [0,0,0], 5, pinHeight, 1, [0,0])
+bowlingBall = ball([0,ballHeight/2,0], 10, ballHeight/2, [0,5])
+bowlingPin = pin([0,5,100], 5, 10, [0, 0], [1, 1, 1])
 
 dt = 0.1
 
 while True:
     clock.tick(10)
 
-    event = pygme.event.poll()
-    if event.type == pygame.Quit:
+    event = pygame.event.poll()
+    if event.type == pygame.QUIT:
         pygame.quit()
         sys.exit
     elif event.type == pygame.KEYDOWN and event.key == pygame.K_q:
