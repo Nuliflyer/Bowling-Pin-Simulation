@@ -1,4 +1,5 @@
-
+from collision import *
+from ball import *
 
 class pin:
     #Position is origin of pin, angles are xy and yz angles, definition is stretch factors on elipsoid. (a, b, c)
@@ -38,8 +39,3 @@ class pin:
 
     def getDefinition(self):
         return self.definition
-
-
-bowlingPin = pin([0,5,0], 5, 10, [0, 0], [1, 1, 1])
-collision([0,5,0])
-bowlingPin.setPosition([0, 10, 0])
