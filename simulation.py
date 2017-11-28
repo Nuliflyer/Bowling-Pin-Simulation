@@ -22,8 +22,8 @@ screen = pygame.display.set_mode((windowWidth, windowHeight))
 pygame.display.set_caption('Bowling Pin Simulation')
 
 ballHeight = 12.75
-bowlingBall = ball(ballImage, [0,ballHeight/2,0], 10, ballHeight/2, [0,5])
-bowlingPin = pin(pinImage, [0,5,1080], 5, 10, [0, 0], [1, 1, 1])
+bowlingBall = ball(ballImage, [0,ballHeight/2,0], 10, ballHeight/2, [0,3])
+bowlingPin = pin(pinImage, [0,5,1080], 5, 10, [0, 0], [1/2, 1/2, 1/2])
 
 dt = 0.1
 
