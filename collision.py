@@ -9,10 +9,15 @@ def collisionMath(pin, ball):
     pBall  = ball.getMass() / (ball.getMass() + pin.getMass())
     vMagBall = pBall / ball.getMass()
     vMagPin = pPin / pin.getMass()
-    dirPin = np.linalg.norm(np.subtract(ball.getPosition(), pin.getPosition()))
+    dirPin = np.subtract(ball.getPosition(), pin.getPosition())
+    normVal = (dirPin[0]**2 + dirPin[1]**2 + dirPin[2]**2)**0.5
+    dirPinNorm = [dirPin[0]/normVal, dirPin[1]/normVal, dirPin[2]/normVal]
     print (dirPin)
+    print (dirPinNorm)
     print (vMagPin)
-    pin.setVelocity(dirPin * vMagPin)
+    for x in range(3):
+        dirPinNorm[x] = dirPinNorm[x] * vMagPin
+    pin.setVelocity(dirPinNorm)
     ball.setVelocity([0,vMagBall])
 
 def collision(pin, ball):
