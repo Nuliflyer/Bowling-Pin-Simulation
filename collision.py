@@ -5,8 +5,8 @@ from scipy.spatial import distance
 
 def collisionMath(pin, ball):
     pTotal = pin.getMass() * distance.euclidean(0, pin.getVelocity()) + ball.getMass() * distance.euclidean(0, ball.getVelocity())
-    pPin = pin.getMass() / (pin.getMass() + ball.getMass())
-    pBall  = ball.getMass() / (ball.getMass() + pin.getMass())
+    pPin = (pin.getMass() + ball.getMass() * 0.8) / (pin.getMass() + ball.getMass())
+    pBall  = (pin.getMass() + ball.getMass() * 0.2) / (ball.getMass() + pin.getMass())
     vMagBall = pBall / ball.getMass()
     vMagPin = pPin / pin.getMass()
     dirPin = np.subtract(ball.getPosition(), pin.getPosition())
