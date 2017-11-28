@@ -45,9 +45,15 @@ while True:
     bowlingBall.updatePositiion()
 
     bowlingPin.draw(screen)
+<<<<<<< HEAD
     bowlingPin.updatePositiion()
     if getCollision() == False:
         print (getCollision())
         collision(bowlingPin, bowlingBall)
+=======
+    #update needed
+
+    collision(bowlingPin, bowlingBall)
+>>>>>>> parent of addc88d... When the Pin and Ball becomes one
 
     pygame.display.update()

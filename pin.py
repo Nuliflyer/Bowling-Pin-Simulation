@@ -49,6 +49,7 @@ class pin:
     def getDefinition(self):
         return self.definition
 
+<<<<<<< HEAD
     def updatePositiion(self):
         x = self.x + self.vx
         if x >= 43:
@@ -61,7 +62,9 @@ class pin:
         z = self.z + self.vz
         self.setPosition([x, y, z])
 
+=======
+>>>>>>> parent of addc88d... When the Pin and Ball becomes one
     def draw(self, surface):
         rect = self.image.get_rect()
-        rect.center = (self.z, 75+self.x)
+        rect.center = (1080, 75)
         surface.blit(self.image, rect)
