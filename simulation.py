@@ -46,7 +46,7 @@ while True:
     bowlingBall.updatePositiion()
 
     bowlingPin.draw(screen)
-    #update needed
+    bowlingPin.updatePositiion()
 
     collision(bowlingPin, bowlingBall)
 

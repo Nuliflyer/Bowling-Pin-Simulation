@@ -49,7 +49,19 @@ class pin:
     def getDefinition(self):
         return self.definition
 
+    def updatePositiion(self):
+        x = self.x + self.vx
+        if x >= 43:
+            x = 43
+            self.setVelocity([0, self.vz])
+        elif x <= -43:
+            x = -43
+            self.setVelocity([0, self.vz])
+        y = self.y + self.vy
+        z = self.z + self.vz
+        self.setPosition([x, y, z])
+
     def draw(self, surface):
         rect = self.image.get_rect()
-        rect.center = (1080, 75)
+        rect.center = (self.z, 75+self.x)
         surface.blit(self.image, rect)
