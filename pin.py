@@ -10,7 +10,8 @@ class pin:
         self.y = position[1]
         self.z = position[2]
         self.m = mass
-        self.angles = angles
+        self.alpha = angles[0]
+        self.beta = angles[1]
         self.definition = definition
 
     def getDefinition(self):
@@ -32,10 +33,13 @@ class pin:
         self.vx, self.vy, self.vz = velocity
 
     def getAngles(self):
-        return self.angles
+        return [self.alpha, self.beta]
 
-    def setAngle(self, angles):
-        self.a, self.b = angles
+    def setAngleAlpha(self, angle):
+        self.alpha = angle
+
+    def setAngleBeta(self, angle):
+        self.beta = angle
 
     def getDefinition(self):
         return self.definition

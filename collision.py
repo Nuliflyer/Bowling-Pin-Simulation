@@ -3,10 +3,12 @@ import math
 
 def collision(pin, ball):
     diff = np.subtract(pin.getPosition(), ball.getPosition())
-    diff[:] = [i - 13 for i in diff]
-    pinX = math.degrees(math.cos(pin.getAngles[0]))
-    pinY = math.degrees(math.sin(pin.getAngles[0]))
-    pinZ = math.degrees(math.sin(pin.getAngles[0]))
+    diff[:] = [i - ball.getRadius() for i in diff]
+
+
+    pinX = math.degrees(math.cos(pin.getAngles[0]))*length
+    pinY = math.degrees(math.sin(pin.getAngles[1]))*length
+    pinZ = math.degrees(math.sin(pin.getAngles[2]))*length
 
 
     if (pin.getRadius() + pin.getHeight() >= (((pin.getPosition()[0]-ball.getPosition()[0])**2 +
