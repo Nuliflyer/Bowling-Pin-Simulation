@@ -33,7 +33,7 @@ class pin:
         self.x, self.y, self.z = point
 
     def setVelocity(self, velocity):
-        self.vx, self.vy, self.vz = velocity
+        self.vx, self.vy, self.vz = velocity[0], velocity[1], velocity[2]
 
     def getAngles(self):
         return [self.alpha, self.beta]
