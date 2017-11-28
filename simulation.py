@@ -15,20 +15,20 @@ pygame.init()
 
 clock = pygame.time.Clock()
 
-windowWidth = 500
-windowHeight = 500
+windowWidth = 1125
+windowHeight = 150
 
 screen = pygame.display.set_mode((windowWidth, windowHeight))
 pygame.display.set_caption('Bowling Pin Simulation')
 
-ballHeight = 8
-bowlingBall = ball([0,ballHeight/2,0], 10, ballHeight/2, [0,5])
-bowlingPin = pin([0,5,100], 5, 10, [0, 0], [1, 1, 1])
+ballHeight = 12.75
+bowlingBall = ball(ballImage, [0,ballHeight/2,0], 10, ballHeight/2, [0,5])
+bowlingPin = pin(pinImage, [0,5,1080], 5, 10, [0, 0], [1, 1, 1])
 
 dt = 0.1
 
 while True:
-    clock.tick(10)
+    clock.tick(30)
 
     event = pygame.event.poll()
     if event.type == pygame.QUIT:
@@ -42,4 +42,9 @@ while True:
 
     screen.fill(GREY)
 
+    bowlingBall.draw(screen)
+    bowlingBall.updatePositiion()
+
+    bowlingPin.draw(screen)
+    #update needed
     pygame.display.update()

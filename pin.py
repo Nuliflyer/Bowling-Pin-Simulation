@@ -1,6 +1,10 @@
+import pygame
+
 class pin:
     #Position is origin of pin, angles are xy and yz angles, definition is stretch factors on elipsoid. (a, b, c)
-    def __init__(self, position, velocity, mass, angles, definition):
+    def __init__(self, imgfile, position, velocity, mass, angles, definition):
+        self.image = pygame.image.load(imgfile)
+        self.image = pygame.transform.scale(self.image, (int(4*2), int(4*2)))
         self.definition = definition
         self.x = position[0]
         self.y = position[1]
@@ -37,7 +41,7 @@ class pin:
     def getDefinition(self):
         return self.definition
 
-
-# bowlingPin = pin([0,5,0], 5, 10, [0, 0], [1, 1, 1])
-# collision([0,5,0])
-# bowlingPin.setPosition([0, 10, 0])
+    def draw(self, surface):
+        rect = self.image.get_rect()
+        rect.center = (1080, 75)
+        surface.blit(self.image, rect)
