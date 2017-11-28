@@ -2,13 +2,6 @@ import numpy as np
 import math
 from scipy.spatial import distance
 
-hit = False
-
-def setCollision(boolVal):
-    hit = boolVal
-
-def getCollision():
-    return hit
 
 def collisionMath(pin, ball):
     pTotal = pin.getMass() * distance.euclidean(0, pin.getVelocity()) + ball.getMass() * distance.euclidean(0, ball.getVelocity())
@@ -26,7 +19,6 @@ def collisionMath(pin, ball):
         dirPinNorm[x] = dirPinNorm[x] * vMagPin
     pin.setVelocity(dirPinNorm)
     ball.setVelocity([0,vMagBall])
-    setCollision(True)
 
 def collision(pin, ball):
     length = distance.euclidean(pin.getPosition(), ball.getPosition()) - ball.getRadius()
