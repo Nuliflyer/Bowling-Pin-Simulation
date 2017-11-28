@@ -26,7 +26,7 @@ bowlingBall = ball(ballImage, [0,ballHeight/2,0], 10, ballHeight/2, [0,3])
 bowlingPin = pin(pinImage, [0,5,1080], [0, 0, 0], 10, [0, 0], [1/2, 1/2, 1/2])
 
 dt = 0.1
-hit = false
+
 while True:
     clock.tick(30)
 
@@ -47,7 +47,9 @@ while True:
 
     bowlingPin.draw(screen)
     bowlingPin.updatePositiion()
-    if(hit):
-        hit = collision(bowlingPin, bowlingBall)
+
+    if getCollision() == False:
+        print (getCollision())
+        collision(bowlingPin, bowlingBall)
 
     pygame.display.update()
