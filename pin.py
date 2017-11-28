@@ -53,10 +53,10 @@ class pin:
         x = self.x + self.vx
         if x >= 43:
             x = 43
-            self.setVelocity([0, self.vz])
+            self.setVelocity([0, 0 ,self.vz])
         elif x <= -43:
             x = -43
-            self.setVelocity([0, self.vz])
+            self.setVelocity([0, 0, self.vz])
         y = self.y + self.vy
         z = self.z + self.vz
         self.setPosition([x, y, z])
