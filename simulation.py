@@ -23,7 +23,7 @@ pygame.display.set_caption('Bowling Pin Simulation')
 
 ballHeight = 12.75
 bowlingBall = ball(ballImage, [0,ballHeight/2,0], 10, ballHeight/2, [0,3])
-bowlingPin = pin(pinImage, [0,5,1080], [0, 0, 0], 10, [0, 0], [1/2, 1/2, 1/2])
+bowlingPin = pin(pinImage, [0,5,1080], [0, 0, 0], 10, [0, 0], [1, 1/10, 1])
 
 dt = 0.1
 while True:
