@@ -9,6 +9,9 @@ class pin:
         self.x = position[0]
         self.y = position[1]
         self.z = position[2]
+        self.vx = velocity[0]
+        self.vy = velocity[1]
+        self.vz = velocity[2]
         self.m = mass
         self.alpha = angles[0]
         self.beta = angles[1]

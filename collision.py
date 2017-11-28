@@ -3,8 +3,15 @@ import math
 from scipy.spatial import distance
 
 
-#def collisionMath(pin, ball):
-#    pTotal = pin.getMass() * pin.getVelocity()
+def collisionMath(pin, ball):
+    pTotal = pin.getMass() * distance.euclidean([0,0,0], pin.getVelocity()) + ball.getMass() * distance.euclidean([0,0,0], ball.getVelocity())
+    pPin = pin.getMass() / (pin.getMass() + ball.getMass())
+    pBall  = ball.getMass() / (ball.getMass() + pin.getMass())
+    vMagBall = pBall / ball.getMass()
+    vMagPin = pPin / pin.getMass()
+    dirPin = np.normalize(np.subtract(ball.getPosition(), pin.getPosition()))
+    pin.setVelocity(dirPin * vMapPin)
+    ball.setVelocity([0,vMagBall])
 
 def collision(pin, ball):
     length = distance.euclidean(pin.getPosition(), ball.getPosition()) - ball.getRadius()
@@ -18,5 +25,5 @@ def collision(pin, ball):
         return False
     else:
         print("Collision")
-#        collisionMath(pin, ball)
+        collisionMath(pin, ball)
         return True
