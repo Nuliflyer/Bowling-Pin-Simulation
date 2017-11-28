@@ -7,10 +7,15 @@ def collision(pin, ball):
     diff[:] = [i - ball.getRadius() for i in diff]
     length = distance.euclidean((0,0,0), diff)
 
-    pinX = math.degrees(math.cos(pin.getAngles()[0]))*length
-    pinY = math.degrees(math.sin(pin.getAngles()[1]))*length
-    pinZ = math.degrees(math.sin(pin.getAngles()[1]))*length
+    xPin = length * math.sin(pin.getAngles()[0]) * math.cos(pin.getAngles()[1])
+    yPin = length * math.sin(pin.getAngles()[0]) * math.sin(pin.getAngles()[1])
+    zPin = length * math.cos(pin.getAngles()[0])
 
+    if(pin.getDefinition[0] * xPin**2 + pin.getDefinition[1] * yPin**2 + pin.getDefinition[2] * zPin**2 > 1):
+        return false
+    else:
+        return true
+    
 
 '''#Definition refers to the parameters needed to define the pin. [a, b, c] -> ax^2 + by^2 + cz^2 = 1
 #Reqirements for this to work:
