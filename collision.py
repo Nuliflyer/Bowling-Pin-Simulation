@@ -1,20 +1,15 @@
 import numpy as np
 import math
+from scipy.spatial import distance
 
 def collision(pin, ball):
     diff = np.subtract(pin.getPosition(), ball.getPosition())
     diff[:] = [i - ball.getRadius() for i in diff]
+    length = distance.euclidean((0,0,0), diff)
 
-
-    pinX = math.degrees(math.cos(pin.getAngles[0]))*length
-    pinY = math.degrees(math.sin(pin.getAngles[1]))*length
-    pinZ = math.degrees(math.sin(pin.getAngles[2]))*length
-
-
-    if (pin.getRadius() + pin.getHeight() >= (((pin.getPosition()[0]-ball.getPosition()[0])**2 +
-       (pin.getPosition()[1]-ball.getPosition()[1])**2 +
-       (pin.getPosition()[2]-ball.getPosition()[2])**2)**0.5)):
-        print ("collision potentially happening.")
+    pinX = math.degrees(math.cos(pin.getAngles()[0]))*length
+    pinY = math.degrees(math.sin(pin.getAngles()[1]))*length
+    pinZ = math.degrees(math.sin(pin.getAngles()[1]))*length
 
 
 '''#Definition refers to the parameters needed to define the pin. [a, b, c] -> ax^2 + by^2 + cz^2 = 1
