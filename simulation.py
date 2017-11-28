@@ -3,7 +3,7 @@ pinImage = "pin.png"
 
 from ball import *
 from pin import *
-from collision import*
+from collision import *
 
 import pygame
 import sys
@@ -47,4 +47,7 @@ while True:
 
     bowlingPin.draw(screen)
     #update needed
+
+    collision(bowlingPin, bowlingBall)
+
     pygame.display.update()
