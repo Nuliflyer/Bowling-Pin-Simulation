@@ -51,11 +51,11 @@ class pin:
 
     def updatePositiion(self):
         x = self.x + self.vx
-        if x >= 43:
-            x = 43
+        if x >= 31:
+            x = 31
             self.setVelocity([0, 0 ,self.vz])
-        elif x <= -43:
-            x = -43
+        elif x <= -31:
+            x = -31
             self.setVelocity([0, 0, self.vz])
         y = self.y + self.vy
         z = self.z + self.vz
